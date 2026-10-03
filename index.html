@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f8fb" />
+  <meta name="description" content="A connected hospital operations dashboard for care teams." />
+  <title>CarePoint — Hospital Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="CarePoint home"><span class="brand-mark">✚</span><span>care<span class="brand-light">point</span><small>HOSPITAL SYSTEM</small></span></a>
+      <div class="facility"><span class="facility-icon">✚</span><span><b>City General</b><small>Central Hospital</small></span><span class="chevron">⌄</span></div>
+      <nav class="nav" aria-label="Main navigation">
+        <p class="nav-label">WORKSPACE</p>
+        <a href="#overview" class="nav-item active" data-view="overview"><span class="nav-icon">◫</span>Overview</a>
+        <a href="#patients" class="nav-item" data-view="patients"><span class="nav-icon">♙</span>Patients <span class="nav-count" id="patient-count">0</span></a>
+        <a href="#appointments" class="nav-item" data-view="appointments"><span class="nav-icon">▦</span>Appointments</a>
+        <a href="#staff" class="nav-item" data-view="staff"><span class="nav-icon">♧</span>Medical staff</a>
+        <p class="nav-label nav-gap">CARE & OPERATIONS</p>
+        <a href="#wards" class="nav-item" data-view="wards"><span class="nav-icon">▤</span>Wards & beds</a>
+        <a href="#laboratory" class="nav-item" data-view="laboratory"><span class="nav-icon">⚗</span>Laboratory <i class="nav-dot"></i></a>
+        <a href="#pharmacy" class="nav-item" data-view="pharmacy"><span class="nav-icon">✣</span>Pharmacy</a>
+        <a href="#billing" class="nav-item" data-view="billing"><span class="nav-icon">＄</span>Billing</a>
+        <p class="nav-label nav-gap">INSIGHTS</p>
+        <a href="#reports" class="nav-item" data-view="reports"><span class="nav-icon">▥</span>Reports</a>
+        <a href="#settings" class="nav-item" data-view="settings"><span class="nav-icon">⚙</span>Settings</a>
+      </nav>
+      <div class="sidebar-bottom"><div class="help-card"><span class="help-icon">?</span><b>Need a hand?</b><p>Our support team is here for you.</p><button class="text-button" id="help-button">Visit help center <span>→</span></button></div><div class="sidebar-user"><div class="avatar avatar-purple">AM</div><span><b>Alex Morgan</b><small>Hospital Administrator</small></span><button class="more-button" aria-label="Account menu">···</button></div></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button class="icon-button mobile-menu" id="menu-button" aria-label="Open menu">☰</button><div class="breadcrumb">Workspace <span>/</span> <b id="breadcrumb-current">Overview</b></div><div class="top-actions"><label class="global-search"><span>⌕</span><input id="global-search" type="search" placeholder="Search anything..." /><kbd>⌘ K</kbd></label><button class="icon-button notification-button" id="notification-button" aria-label="Notifications">♧<i></i></button><div class="top-divider"></div><button class="profile-button"><div class="avatar avatar-purple">AM</div><span><b>Alex Morgan</b><small>Administrator</small></span><span class="chevron">⌄</span></button></div></header>
+      <section class="page-content" id="page-content" aria-live="polite"></section>
+      <footer class="footer"><span>© 2025 CarePoint Health Systems</span><span><i class="status-dot"></i> All systems operational <span class="footer-sep">·</span> Privacy & security</span></footer>
+    </main>
+  </div>
+  <div id="modal-root"></div><div class="toast-region" id="toast-region" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
